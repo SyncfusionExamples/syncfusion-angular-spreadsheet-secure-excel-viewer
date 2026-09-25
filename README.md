@@ -239,6 +239,9 @@ npm install
 ## 📚 Resources
 
 - [Syncfusion Angular Spreadsheet Docs](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/overview)
+- [Sheet Protection](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/protect-sheet)
+- [Read Only in Spreadsheet](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/protect-sheet#make-cells-read-only-without-protecting-worksheet)
+- [Syncfusion Angular Spreadsheet API reference](https://ej2.syncfusion.com/angular/documentation/api/spreadsheet/index-default)
 - [Angular Documentation](https://angular.io/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
