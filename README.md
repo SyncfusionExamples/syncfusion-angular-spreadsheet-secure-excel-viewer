@@ -262,13 +262,6 @@ For issues, questions, or feedback:
 - Check existing documentation and examples
 - Review the Syncfusion support portal
 
-## 🎓 Learning Resources
-
-- View Mode vs Edit Mode demonstration
-- Security model implementation patterns
-- Responsive Angular component design
-- Syncfusion component integration best practices
-
 ---
 
 **Built with ❤️ using Syncfusion and Angular**
