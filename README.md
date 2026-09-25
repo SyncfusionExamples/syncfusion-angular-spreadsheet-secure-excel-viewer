@@ -4,17 +4,17 @@ A production-ready Angular application demonstrating a **secure, read-only Excel
 
 ## 🎯 Features
 
-- **Secure View Mode (Read-Only)** - Default mode with all restrictions enabled
-  - Cell editing disabled
-  - Copy/paste operations blocked
+- **Secure View Mode (Read-Only)** - Default mode with editing and modification restrictions enabled.
+  - Cell editing actions such as edit, delete, clear, autofill, and other content modification operations disabled
+  - Clipboard operations (cut, copy, and paste) restricted  
   - Save functionality disabled
-  - Sheet structure protected
+  - Rows, columns, and sheets protected from structural changes
 
-- **Flexible Edit Mode** - Toggle to allow authorized editing
-  - Full cell editing capabilities
-  - Clipboard operations enabled
-  - Save functionality available
-  - Structural modifications remain restricted for safety
+- **Flexible Edit Mode** - Toggle to allow authorized users to modify workbook content and structure.
+  - Edit cell values and formulas
+  - Perform clipboard operations (cut, copy, and paste)
+  - Save workbook changes
+  - Insert, delete, and modify rows, columns, and sheets
 
 - **Mode Toggle Switch** - Syncfusion Switch component for seamless mode switching
   - Real-time visual indicators (View Mode / Edit Mode)
@@ -26,11 +26,6 @@ A production-ready Angular application demonstrating a **secure, read-only Excel
   - Workbook protection (prevents sheet operations)
   - Contextual menu restrictions
   - Toolbar item state management
-
-- **Responsive Design**
-  - Mobile-friendly layout
-  - Tailwind CSS 3 styling
-  - Adaptive viewport rendering
 
 ## 📋 Tech Stack
 
@@ -96,30 +91,6 @@ src/
 └── index.html                   # Entry point
 ```
 
-## 💡 Usage
-
-### Basic Implementation
-
-The component auto-loads with a sample Excel file and initializes in **View Mode** by default:
-
-```html
-<app-spreadsheet></app-spreadsheet>
-```
-
-### Component Integration
-
-```typescript
-import { SpreadsheetComponent } from './spreadsheet';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [SpreadsheetComponent],
-  template: '<app-spreadsheet></app-spreadsheet>'
-})
-export class AppComponent {}
-```
-
 ## 🔐 Security Model
 
 ### View Mode (Default - isReadOnly = true)
@@ -180,42 +151,6 @@ Run unit tests:
 npm test
 ```
 
-**Test Coverage:**
-- Component initialization
-- Mode toggle functionality
-- Read-only restrictions
-- Edit mode capabilities
-- Template rendering
-- Accessibility features
-
-## 🎨 Theming
-
-The application uses **Tailwind CSS 3** with Syncfusion theming. To customize:
-
-1. **Global Styles**: Edit `src/styles.css`
-2. **Component Styles**: Edit `src/app/spreadsheet/spreadsheet.component.css`
-3. **Tailwind Config**: Modify `tailwind.config.js` (if present)
-
-### Color Scheme
-
-- **View Mode**: Amber (#d97706) for read-only indication
-- **Edit Mode**: Blue (#2563eb) for editing indication
-- **Neutral**: Gray (#6b7280) for descriptions
-
-## ♿ Accessibility
-
-- **ARIA Labels**: Proper accessibility labels on toggle switch
-- **Semantic HTML**: Meaningful element structure
-- **Keyboard Navigation**: Full keyboard support for all controls
-- **Screen Reader**: Descriptive status messages for assistive technologies
-
-## 📱 Browser Support
-
-- Chrome/Chromium (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## 🐛 Troubleshooting
 
 ### Port Already in Use
@@ -241,40 +176,11 @@ npm install
 - [Syncfusion Angular Spreadsheet Docs](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/overview)
 - [Sheet Protection](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/protect-sheet)
 - [Read Only in Spreadsheet](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/protect-sheet#make-cells-read-only-without-protecting-worksheet)
+- [Ribbon Customization](https://help.syncfusion.com/document-processing/excel/spreadsheet/angular/ribbon)
 - [Syncfusion Angular Spreadsheet API reference](https://ej2.syncfusion.com/angular/documentation/api/spreadsheet/index-default)
 - [Angular Documentation](https://angular.io/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
 ## 📄 License
 
-This repository contains sample code and is provided as-is for demonstration purposes. Check the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 💬 Support
-
-For issues, questions, or feedback:
-- Open an issue in the [GitHub repository](https://github.com/SyncfusionExamples/syncfusion-angular-spreadsheet-secure-excel-viewer/issues)
-- Check existing documentation and examples
-- Review the Syncfusion support portal
-
----
-
-**Built with ❤️ using Syncfusion and Angular**
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This repository contains sample code provided for demonstration purposes only. For information about Syncfusion licensing and license activation, refer to the [Syncfusion License Documentation](https://help.syncfusion.com/document-processing/licensing/overview).
