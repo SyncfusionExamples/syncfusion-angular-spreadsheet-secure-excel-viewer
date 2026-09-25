@@ -1,0 +1,50 @@
+<div class="spreadsheet-container">
+  <!-- Mode Control Section -->
+  <div class="mode-control-section">
+    <!-- Mode Indicator Text -->
+    <div class="mode-indicator">
+      <span class="text-lg font-semibold" [ngClass]="isReadOnly ? 'text-amber-600' : 'text-blue-600'">
+        {{ isReadOnly ? 'View Mode' : 'Edit Mode' }}
+      </span>
+    </div>
+
+    <!-- Mode Toggle Switch -->
+    <div class="mode-toggle">
+      <ejs-switch
+        #readOnlySwitch
+        id="readOnlySwitch"
+        [(ngModel)]="isReadOnly"
+        (change)="onModeToggleChange($event)"
+        [attr.aria-label]="'Toggle view mode. Currently in ' + (isReadOnly ? 'view' : 'edit') + ' mode'"
+      ></ejs-switch>
+    </div>
+  </div>
+
+  <!-- Spreadsheet Component -->
+  <div class="spreadsheet-wrapper">
+    <ejs-spreadsheet
+      #spreadsheet
+      [scrollSettings]="scrollSettings"
+      openUrl="https://document.syncfusion.com/web-services/spreadsheet-editor/api/spreadsheet/open"
+      saveUrl="https://document.syncfusion.com/web-services/spreadsheet-editor/api/spreadsheet/save"
+      (created)="createdHandler()"
+      (openComplete)="openCompleteHandler()"
+      (dialogBeforeOpen)="dialogBeforeOpenHandler($event)"
+      (contextMenuBeforeOpen)="contextMenuBeforeOpenHandler($event)"
+      (contextMenuItemSelect)="contextMenuItemSelectHandler($event)"
+      (actionBegin)="onActionBegin($event)"
+    ></ejs-spreadsheet>
+  </div>
+
+  <!-- Mode Status Description -->
+  <div class="mode-status-info">
+    <p *ngIf="isReadOnly" class="flex items-start gap-2 m-0">
+      <span class="text-amber-600 font-bold">ℹ️</span>
+      <span>Spreadsheet is in view mode. Cell editing, clipboard operations, and save are disabled. Sheet structure is protected.</span>
+    </p>
+    <p *ngIf="!isReadOnly" class="flex items-start gap-2 m-0">
+      <span class="text-blue-600 font-bold">✓</span>
+      <span>Spreadsheet is in edit mode. You can edit cells and use clipboard operations. Sheet structure remains protected.</span>
+    </p>
+  </div>
+</div>
