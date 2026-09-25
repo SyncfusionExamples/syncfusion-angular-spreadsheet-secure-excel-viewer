@@ -283,7 +283,7 @@ export class SpreadsheetComponent {
      * since the UI already displays mode status through the mode indicator and description
      */
     public dialogBeforeOpenHandler(args: any): void {
-        if (args.dialogName === 'ReadOnlyAlertDialog') {
+        if (args.dialogName === 'ReadOnlyAlertDialog' || (this.isReadOnly && args.dialogName === 'FindAndReplaceDialog')) {
             args.cancel = true; // Cancel the read-only alert dialog
         }
     }
