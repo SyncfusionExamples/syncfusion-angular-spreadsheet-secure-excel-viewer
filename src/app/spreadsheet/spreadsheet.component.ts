@@ -289,6 +289,20 @@ export class SpreadsheetComponent {
     }
 
     /**
+     * Handles file menu before open event
+     * Disable the Print menu option
+     *
+     * @param args - File menu event arguments
+     * @param args.dialogName - Name of the dialog being opened
+     *
+     * @remarks
+     * Update the Print file menu option state based on read only mode
+     */
+    public fileMenuBeforeOpenHandler(args: any): void {
+        this.spreadsheetObj.enableFileMenuItems(['Print'], !this.isReadOnly);
+    }
+
+    /**
      * Handles context menu before open event
      * Customizes available context menu items based on read-only mode
      *
